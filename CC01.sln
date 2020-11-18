@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC01", "CC01\CC01.csproj", "{4E3BA3DA-DEFA-4F9B-923A-2E4429B084E9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC01.BO", "CC01.BO\CC01.BO.csproj", "{9DB32D05-CE31-4E81-91F0-75D0AA830E5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC01.DAL", "CC01.DAL\CC01.DAL.csproj", "{43FED84D-FB7C-47B4-99FD-8EA18202A27D}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E3BA3DA-DEFA-4F9B-923A-2E4429B084E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E3BA3DA-DEFA-4F9B-923A-2E4429B084E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E3BA3DA-DEFA-4F9B-923A-2E4429B084E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E3BA3DA-DEFA-4F9B-923A-2E4429B084E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DB32D05-CE31-4E81-91F0-75D0AA830E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DB32D05-CE31-4E81-91F0-75D0AA830E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB32D05-CE31-4E81-91F0-75D0AA830E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
