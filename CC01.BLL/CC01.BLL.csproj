@@ -50,9 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="EcoleBLO.cs" />
     <Compile Include="EtudiantBLO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypingException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CC01.BO\CC01.BO.csproj">
