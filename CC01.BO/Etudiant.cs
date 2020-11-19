@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CC01.BO
 {
     [Serializable]
-    class Etudiant
+   public class Etudiant
     {
         public string Matricule { get; set; }
 
