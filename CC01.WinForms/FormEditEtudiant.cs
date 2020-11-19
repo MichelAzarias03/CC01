@@ -1,6 +1,6 @@
 ﻿using System;
 using CC01.BO;
-using CC01.BLL;
+using CC01.DAL;
 using System.IO;
 using System.Configuration;
 using System.Collections.Generic;
@@ -59,9 +59,12 @@ namespace CC01.WinForms
                 (
                     txtMatricule.Text.ToUpper(),
                     txtNom.Text,
-                    double.Parse(txtPrice.Text),
-                    float.Parse(txtTax.Text),
-                    !string.IsNullOrEmpty(pictureBox1.ImageLocation) ? File.ReadAllBytes(pictureBox1.ImageLocation) : this.oldProduct?.Picture
+                    txtPrenom.Text,
+                    txtLieu.Text,
+                    !string.IsNullOrEmpty(pictureBox1.ImageLocation) ? File.ReadAllBytes(pictureBox1.ImageLocation) : this.oldEtudiant?.CarteEtudiant,
+                    txtEmail.Text,
+                    int.Parse(txtContact.Text),
+                    dateTimePicker1.Value.Date
                 );
 
                 EtudiantBLO etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
@@ -136,28 +139,28 @@ namespace CC01.WinForms
                    MessageBoxIcon.Error
                );
             }
-
-            private void checkForm()
+ 
+        }
+        private void checkForm()
+        {
+            string text = string.Empty;
+            txtMatricule.BackColor = Color.White;
+            txtNom.BackColor = Color.White;
+            if (string.IsNullOrWhiteSpace(txtMatricule.Text))
             {
-                string text = string.Empty;
-                txtMatricule.BackColor = Color.White;
-                txtNom.BackColor = Color.White;
-                if (string.IsNullOrWhiteSpace(txtMatricule.Text))
-                {
-                    text += "- Please enter the reference ! \n";
-                   txtMatricule.BackColor = Color.Pink;
-                }
-                if (string.IsNullOrWhiteSpace(txtNom.Text))
-                {
-                    text += "- Please enter the name ! \n";
-                    txtNom.BackColor = Color.Pink;
-                }
-
-                if (!string.IsNullOrEmpty(text))
-                    throw new TypingException(text);
+                text += "- Please enter the reference ! \n";
+                txtMatricule.BackColor = Color.Pink;
+            }
+            if (string.IsNullOrWhiteSpace(txtNom.Text))
+            {
+                text += "- Please enter the name ! \n";
+                txtNom.BackColor = Color.Pink;
             }
 
+            if (!string.IsNullOrEmpty(text))
+                throw new TypingException(text);
         }
+
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {

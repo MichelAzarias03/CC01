@@ -16,7 +16,7 @@ namespace CC01.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormEditEtudiant());
+            Application.Run(new FormParent());
         }
     }
 }

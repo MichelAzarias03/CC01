@@ -5,12 +5,13 @@ using CC01.BO;
 using Newtonsoft.Json;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CC01.DAL
 {
-    class EcoleDAO
+    public class EcoleDAO
     {
-        private Ecole ecole;
+        private Ecole ecoles=new Ecole();
         private const string FILE_NAME = @"ecole.json";
         private readonly string dbFolder;
         private FileInfo file;
@@ -32,7 +33,7 @@ namespace CC01.DAL
                 using (StreamReader sr = new StreamReader(file.FullName))
                 {
                     string json = sr.ReadToEnd();
-                    ecole = JsonConvert.DeserializeObject<Ecole>(json);
+                    ecoles = JsonConvert.DeserializeObject<Ecole>(json);
                 }
             }
         }
@@ -48,7 +49,8 @@ namespace CC01.DAL
 
         public Ecole Get()
         {
-            return ecole;
+            return ecoles;
         }
+       
     }
 }

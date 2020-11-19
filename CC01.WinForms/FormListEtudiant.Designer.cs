@@ -43,7 +43,7 @@ namespace CC01.WinForms
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtRecherch = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblRecherch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -194,16 +194,16 @@ namespace CC01.WinForms
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // txtRecherch
+            // txtSearch
             // 
-            this.txtRecherch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRecherch.Location = new System.Drawing.Point(12, 41);
-            this.txtRecherch.Name = "txtRecherch";
-            this.txtRecherch.Size = new System.Drawing.Size(814, 20);
-            this.txtRecherch.TabIndex = 9;
-            this.txtRecherch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
+            this.txtSearch.Location = new System.Drawing.Point(12, 41);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(814, 20);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
             // 
             // lblRecherch
             // 
@@ -229,7 +229,7 @@ namespace CC01.WinForms
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnCreer);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtRecherch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblRecherch);
             this.Name = "FormListEtudiant";
             this.Text = "FormListEtudiant";
@@ -248,7 +248,7 @@ namespace CC01.WinForms
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtRecherch;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblRecherch;
         private System.Windows.Forms.DataGridViewImageColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

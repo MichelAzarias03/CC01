@@ -1,6 +1,6 @@
 ﻿using System;
 using CC01.BO;
-using CC01.BLL;
+using CC01.DAL;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -16,20 +16,33 @@ namespace CC01.WinForms
 {
     public partial class FormEditEcole : Form
     {
-
+        private Action callBack;
         private EcoleBLO ecoleBLO;
         private Ecole oldEcole;
         public FormEditEcole()
         {
             InitializeComponent();
             ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            oldEcole = ecoleBLO.GetCompany();
+            oldEcole = ecoleBLO.GetEcole();
             if (oldEcole != null)
             {
                 txtNom.Text = oldEcole.Nom;
                 txtIdentifiant.Text = oldEcole.Identifiant;
                 pictureBox1.ImageLocation = oldEcole.Logo;
             }
+        }
+        public FormEditEcole(Action callBack):this()
+        {
+            this.callBack = callBack;
+        }
+
+        public FormEditEcole(Ecole ecole, Action callback):this(callback)
+        {
+            this.oldEcole = ecole;
+            txtIdentifiant.Text = ecole.Identifiant;
+            txtNom.Text = ecole.Nom;
+            if (ecole.Logo != null)
+                pictureBox1.Image = Image.FromStream(new MemoryStream(1));
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
@@ -78,22 +91,20 @@ namespace CC01.WinForms
                    MessageBoxIcon.Error
                );
             }
-
-            private void checkForm()
+        }
+        private void checkForm()
+        {
+            string text = string.Empty;
+            txtNom.BackColor = Color.White;
+            txtIdentifiant.BackColor = Color.White;
+            if (string.IsNullOrWhiteSpace(txtNom.Text))
             {
-                string text = string.Empty;
-                txtNom.BackColor = Color.White;
-                txtIdentifiant.BackColor = Color.White;
-                if (string.IsNullOrWhiteSpace(txtNom.Text))
-                {
-                    text += "- Please enter the name ! \n";
-                    txtIdentifiant.BackColor = Color.Pink;
-                }
-
-                if (!string.IsNullOrEmpty(text))
-                    throw new TypingException(text);
+                text += "- Please enter the name ! \n";
+                txtIdentifiant.BackColor = Color.Pink;
             }
 
+            if (!string.IsNullOrEmpty(text))
+                throw new TypingException(text);
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

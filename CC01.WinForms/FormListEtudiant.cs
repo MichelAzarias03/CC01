@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Configuration;
-using System.Data;
-using CC01.BLL;
+using CC01.DAL;
 using CC01.BO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace CC01.WinForms
 {
@@ -35,7 +35,7 @@ namespace CC01.WinForms
         private void loadData()
         {
             string value = txtSearch.Text.ToLower();
-            var etudiants = productBLO.GetBy
+            var etudiants = etudiantBLO.GetBy
             (
                 x =>
                 x.Matricule.ToLower().Contains(value) ||
@@ -68,9 +68,9 @@ namespace CC01.WinForms
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    Form f = new FormProductEdit
+                    Form f = new FormEditEtudiant
                     (
-                        dataGridView1.SelectedRows[i].DataBoundItem as Product,
+                        dataGridView1.SelectedRows[i].DataBoundItem as Etudiant,
                         loadData
                     );
                     f.ShowDialog();
@@ -80,7 +80,7 @@ namespace CC01.WinForms
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnEdit_Click(sender, e);
+            btnModifier_Click(sender, e);
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
@@ -106,25 +106,25 @@ namespace CC01.WinForms
 
         private void btnImprimer_Click(object sender, EventArgs e)
         {
-            List<ListEtudiantPrint> listEtudiantPrints = new List<ListEtudiantPrint>();
+            List<ListEtudiantPrint> items = new List<ListEtudiantPrint>();
             Ecole ecole = ecoleBLO.GetEcole();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                Etudiant e = dataGridView1.Rows[i].DataBoundItem as Etudiant;
+                Etudiant et = dataGridView1.Rows[i].DataBoundItem as Etudiant;
                 items.Add
                (
                    new ListEtudiantPrint
                    (
-                       e.Matricule,
-                       e.Nom,
-                       e.Prenom,
-                       e.DateNaissance,
-                       e.LieuNaissance,
-                       e.CarteEtudiant,
-                       e.Email,
-                       e.Contact,
-                       Ecole?.Identifiant,
-                       Ecole?.NomEcole
+                       et.Matricule,
+                       et.Nom,
+                       et.Prenom,
+                       et.DateNaissance,
+                       et.LieuNaissance,
+                       et.CarteEtudiant,
+                       et.Email,
+                       et.Contact,
+                       ecole?.Identifiant,
+                       ecole?.Nom,
                        !string.IsNullOrEmpty(ecole?.Logo) ? File.ReadAllBytes(ecole?.Logo) : null
                    )
                ) ;

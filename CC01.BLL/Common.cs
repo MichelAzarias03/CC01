@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CC01.BLL
+namespace CC01.DAL
 {
-    class Common
+    public static class Common
     {
         public static void WriteToFile(this Exception ex)
         {

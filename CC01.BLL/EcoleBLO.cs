@@ -7,9 +7,9 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace CC01.BLL
+namespace CC01.DAL
 {
-    class EcoleBLO
+    public class EcoleBLO
     {
         private EcoleDAO ecoleRepo;
         private string dbFolder;
@@ -18,7 +18,11 @@ namespace CC01.BLL
             this.dbFolder = dbFolder;
             ecoleRepo = new EcoleDAO(dbFolder);
         }
-        public void CreateEcole(Ecole oldEcole, ecole newEcole)
+
+        public void DeleteEcole(Ecole ecole)
+        {
+        }
+        public void CreateEcole(Ecole oldEcole, Ecole newEcole)
         {
             string filename = null;
             if (!string.IsNullOrEmpty(newEcole.Logo))
@@ -36,7 +40,7 @@ namespace CC01.BLL
             ecoleRepo.Add(newEcole);
 
             if (!string.IsNullOrEmpty(oldEcole.Logo))
-                File.Delete(oldCEcole.Logo);
+                File.Delete(oldEcole.Logo);
         }
 
         public Ecole GetEcole()

@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CC01.DAL
 {
-    class EtudiantDAO
+    public class EtudiantDAO
     {
         private static List<Etudiant> etudiants = new List<Etudiant>();
         private const string FILE_NAME = @"etudiants.json";

@@ -12,7 +12,7 @@ namespace CC01.BO
 
         public string Identifiant { get; set; }
 
-        public byte[] Logo { get; set; }
+        public string Logo { get; set; }
 
         public string Nom { get; set; }
 
@@ -20,7 +20,7 @@ namespace CC01.BO
         {
 
         }
-        public Ecole(string identifiant, byte[] logo, string nom)
+        public Ecole(string identifiant, string logo, string nom)
         {
             Identifiant = identifiant;
             Logo = logo;

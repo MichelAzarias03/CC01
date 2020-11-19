@@ -1,8 +1,12 @@
-﻿using System;
+﻿using CC01.BO;
+using CC01.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +25,7 @@ namespace CC01.WinForms
         private void loadData()
         {
             string value = txtSearch.Text.ToLower();
-            var ecoles = ecoleBLO.GetBy
-            (
-                x =>
-                x.Identifiant.ToLower().Contains(value) ||
-                x.Nom.ToLower().Contains(value)
-            ).OrderBy(x => x.Identifiant).ToArray();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = ecoles;
-            dataGridView1.ClearSelection();
+            var ecoles = ecoleBLO.GetEcole();
         }
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
@@ -58,10 +54,8 @@ namespace CC01.WinForms
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    Form f = new FormEcoleEdit
+                    Form f = new FormEditEcole
                     (
-                        dataGridView1.SelectedRows[i].DataBoundItem as Product,
-                        loadData
                     );
                     f.ShowDialog();
                 }
@@ -69,7 +63,7 @@ namespace CC01.WinForms
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnEdit_Click(sender, e);
+            btnModifier_Click(sender, e);
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
@@ -95,17 +89,17 @@ namespace CC01.WinForms
 
         private void btnImprimer_Click(object sender, EventArgs e)
         {
-            List<ListEcolePrint> listEcolePrints = new List<ListEcolePrint>();
+            List<ListEcolePrint> items = new List<ListEcolePrint>();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                Ecole e = dataGridView1.Rows[i].DataBoundItem as Ecole;
+                Ecole ecole = dataGridView1.Rows[i].DataBoundItem as Ecole;
                 items.Add
                (
                    new ListEcolePrint
                    (
-                       e.Nom,
-                       e.Identifiant,
-                       e.Logo,
+                       ecole.Nom,
+                       ecole.Identifiant,
+                       !string.IsNullOrEmpty(ecole.Logo) ? File.ReadAllBytes(ecole.Logo) : null
                    )
                );
             }

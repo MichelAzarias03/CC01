@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CC01.BLL
+namespace CC01.DAL
 {
     public class EtudiantBLO
     {
         EtudiantDAO etudiantRepo;
-        public EtudiantBlO(string dbFolder)
+        public EtudiantBLO(string dbFolder)
         {
             etudiantRepo = new EtudiantDAO(dbFolder);
         }
@@ -34,7 +34,7 @@ namespace CC01.BLL
 
         public IEnumerable<Etudiant> GetByReference(string reference)
         {
-            return etudiantRepo.Find(x => x.Reference == reference);
+            return etudiantRepo.Find(x => x.Matricule == reference);
         }
 
         public IEnumerable<Etudiant> GetBy(Func<Etudiant, bool> predicate)

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CC01.BLL
+namespace CC01.DAL
 {
-    class TypingException
+    public class TypingException:Exception
     {
         public TypingException() : base()
         {
