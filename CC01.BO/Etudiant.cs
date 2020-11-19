@@ -15,6 +15,8 @@ namespace CC01.BO
 
         public string Prenom {get; set;}
 
+        public DateTime DateNaissance { get; set; }
+
         public string LieuNaissance { get; set; }
 
         public byte [] CarteEtudiant { get; set; }
@@ -23,7 +25,7 @@ namespace CC01.BO
 
         public int Contact { get; set; }
 
-        public DateTime DateNaissance { get; set; }
+       
 
         public Etudiant(string matricule, string nom, string prenom, string lieuNaissance, 
             byte[] carteEtudiant, string email, int contact, DateTime dateNaissance)
