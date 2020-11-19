@@ -9,20 +9,33 @@ namespace CC01.BO
     [Serializable]
     class Etudiant
     {
+        public string Matricule { get; set; }
+
         public string Nom { get; set; }
 
         public string Prenom {get; set;}
 
-        public string Matricule { get; set; }
+        public string LieuNaissance { get; set; }
 
         public byte [] CarteEtudiant { get; set; }
 
-        public Etudiant(string nom, string prenom, string matricule, byte[] carteEtudiant)
+        public string Email { get; set; }
+
+        public int Contact { get; set; }
+
+        public DateTime DateNaissance { get; set; }
+
+        public Etudiant(string matricule, string nom, string prenom, string lieuNaissance, 
+            byte[] carteEtudiant, string email, int contact, DateTime dateNaissance)
         {
+            Matricule = matricule;
             Nom = nom;
             Prenom = prenom;
-            Matricule = matricule;
+            LieuNaissance = lieuNaissance;
             CarteEtudiant = carteEtudiant;
+            Email = email;
+            Contact = contact;
+            DateNaissance = dateNaissance;
         }
 
         public override bool Equals(object obj)
