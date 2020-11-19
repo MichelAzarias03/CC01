@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace CC01.WinForms
 {
-    public partial class FormEditEcole : Form
+    public partial class FormListEcole : Form
     {
-        public FormEditEcole()
+        public FormListEcole()
         {
             InitializeComponent();
         }
 
-     
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

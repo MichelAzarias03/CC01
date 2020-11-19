@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormEditEcole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEcole.Designer.cs">
+      <DependentUpon>FormEditEcole.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditEtudiant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEditEtudiant.Designer.cs">
       <DependentUpon>FormEditEtudiant.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListEcole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListEcole.Designer.cs">
+      <DependentUpon>FormListEcole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListEtudiant.Designer.cs">
+      <DependentUpon>FormListEtudiant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEditEcole.resx">
+      <DependentUpon>FormEditEcole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditEtudiant.resx">
       <DependentUpon>FormEditEtudiant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListEcole.resx">
+      <DependentUpon>FormListEcole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListEtudiant.resx">
+      <DependentUpon>FormListEtudiant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
