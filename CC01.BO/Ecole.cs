@@ -16,6 +16,10 @@ namespace CC01.BO
 
         public string Nom { get; set; }
 
+        public Ecole()
+        {
+
+        }
         public Ecole(string identifiant, byte[] logo, string nom)
         {
             Identifiant = identifiant;

@@ -25,8 +25,11 @@ namespace CC01.BO
 
         public int Contact { get; set; }
 
-       
 
+        public Etudiant()
+        {
+
+        }
         public Etudiant(string matricule, string nom, string prenom, string lieuNaissance, 
             byte[] carteEtudiant, string email, int contact, DateTime dateNaissance)
         {
