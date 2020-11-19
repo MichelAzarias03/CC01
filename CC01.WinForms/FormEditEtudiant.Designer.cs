@@ -62,6 +62,7 @@ namespace CC01.WinForms
             this.linkLabel1.TabIndex = 37;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "X";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label1
             // 
@@ -86,6 +87,7 @@ namespace CC01.WinForms
             this.btnAnnuler.TabIndex = 35;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // txtEmail
             // 
@@ -192,6 +194,7 @@ namespace CC01.WinForms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnEnregistrer
             // 
@@ -205,6 +208,7 @@ namespace CC01.WinForms
             this.btnEnregistrer.TabIndex = 21;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = false;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // txtNom
             // 

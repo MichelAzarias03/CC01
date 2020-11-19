@@ -11,7 +11,7 @@ namespace CC01.BLL
     public class EtudiantBLO
     {
         EtudiantDAO etudiantRepo;
-        public ProductBLO(string dbFolder)
+        public EtudiantBlO(string dbFolder)
         {
             etudiantRepo = new EtudiantDAO(dbFolder);
         }
@@ -37,12 +37,12 @@ namespace CC01.BLL
             return etudiantRepo.Find(x => x.Reference == reference);
         }
 
-        public IEnumerable<Product> GetBy(Func<Product, bool> predicate)
+        public IEnumerable<Etudiant> GetBy(Func<Etudiant, bool> predicate)
         {
             return etudiantRepo.Find(predicate);
         }
 
-        public void EditEtudiant(Product oldProduct, Product newProduct)
+        public void EditEtudiant(Etudiant oldEtudiant, Etudiant newEtudiant)
         {
             etudiantRepo.Set(oldEtudiant, newEtudiant);
         }

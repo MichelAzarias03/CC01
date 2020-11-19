@@ -15,7 +15,7 @@ namespace CC01.DAL
         private const string FILE_NAME = @"etudiants.json";
         private readonly string dbFolder;
         private FileInfo file;
-        public ProductDAO(string dbFolder)
+        public EtudiantDAO(string dbFolder)
         {
             this.dbFolder = dbFolder;
             file = new FileInfo(Path.Combine(this.dbFolder, FILE_NAME));
@@ -67,7 +67,7 @@ namespace CC01.DAL
         {
             using (StreamWriter sw = new StreamWriter(file.FullName, false))
             {
-                string json = JsonConvert.SerializeObject(products);
+                string json = JsonConvert.SerializeObject(etudiants);
                 sw.WriteLine(json);
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CC01.BO;
+using Newtonsoft.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,7 @@ namespace CC01.DAL
             }
         }
 
-        public void Add(Company company)
+        public void Add(Ecole ecole)
         {
             using (StreamWriter sw = new StreamWriter(file.FullName, false))
             {

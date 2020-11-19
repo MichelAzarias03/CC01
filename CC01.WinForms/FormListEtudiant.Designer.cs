@@ -35,6 +35,7 @@ namespace CC01.WinForms
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnCreer = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +60,7 @@ namespace CC01.WinForms
             this.btnAnnuler.TabIndex = 15;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnImprimer
             // 
@@ -71,6 +73,7 @@ namespace CC01.WinForms
             this.btnImprimer.TabIndex = 14;
             this.btnImprimer.Text = "Imprimer";
             this.btnImprimer.UseVisualStyleBackColor = true;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // btnSupprimer
             // 
@@ -84,6 +87,7 @@ namespace CC01.WinForms
             this.btnSupprimer.TabIndex = 13;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnModifier
             // 
@@ -97,6 +101,7 @@ namespace CC01.WinForms
             this.btnModifier.TabIndex = 12;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = false;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnCreer
             // 
@@ -110,6 +115,7 @@ namespace CC01.WinForms
             this.btnCreer.TabIndex = 11;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = false;
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // dataGridView1
             // 
@@ -124,6 +130,7 @@ namespace CC01.WinForms
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Beige;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -133,44 +140,59 @@ namespace CC01.WinForms
             this.Column7});
             this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(815, 406);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Photo";
+            this.Column8.HeaderText = "PHOTO";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Nom";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Prenom";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Matricule";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Contact";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Email";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "DateNais";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Lieu";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // txtRecherch
             // 
@@ -181,6 +203,7 @@ namespace CC01.WinForms
             this.txtRecherch.Name = "txtRecherch";
             this.txtRecherch.Size = new System.Drawing.Size(814, 20);
             this.txtRecherch.TabIndex = 9;
+            this.txtRecherch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
             // 
             // lblRecherch
             // 
@@ -210,6 +233,7 @@ namespace CC01.WinForms
             this.Controls.Add(this.lblRecherch);
             this.Name = "FormListEtudiant";
             this.Text = "FormListEtudiant";
+            this.Load += new System.EventHandler(this.FormListEtudiant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,6 +248,9 @@ namespace CC01.WinForms
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtRecherch;
+        private System.Windows.Forms.Label lblRecherch;
+        private System.Windows.Forms.DataGridViewImageColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -231,7 +258,5 @@ namespace CC01.WinForms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.TextBox txtRecherch;
-        private System.Windows.Forms.Label lblRecherch;
     }
 }

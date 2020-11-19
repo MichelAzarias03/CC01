@@ -37,6 +37,7 @@ namespace CC01.WinForms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtRecherch = new System.Windows.Forms.TextBox();
             this.lblRecherch = new System.Windows.Forms.Label();
+            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +68,7 @@ namespace CC01.WinForms
             this.btnImprimer.TabIndex = 22;
             this.btnImprimer.Text = "Imprimer";
             this.btnImprimer.UseVisualStyleBackColor = true;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // btnSupprimer
             // 
@@ -80,6 +82,7 @@ namespace CC01.WinForms
             this.btnSupprimer.TabIndex = 21;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnModifier
             // 
@@ -93,6 +96,7 @@ namespace CC01.WinForms
             this.btnModifier.TabIndex = 20;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = false;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnCreer
             // 
@@ -106,6 +110,7 @@ namespace CC01.WinForms
             this.btnCreer.TabIndex = 19;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = false;
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // dataGridView1
             // 
@@ -118,6 +123,7 @@ namespace CC01.WinForms
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Beige;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
             this.Column1,
             this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(23, 88);
@@ -133,6 +139,7 @@ namespace CC01.WinForms
             this.txtRecherch.Name = "txtRecherch";
             this.txtRecherch.Size = new System.Drawing.Size(399, 20);
             this.txtRecherch.TabIndex = 17;
+            this.txtRecherch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
             // 
             // lblRecherch
             // 
@@ -144,6 +151,13 @@ namespace CC01.WinForms
             this.lblRecherch.Size = new System.Drawing.Size(88, 16);
             this.lblRecherch.TabIndex = 16;
             this.lblRecherch.Text = "Rechercher";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Photo";
+            this.Column2.HeaderText = "LOGO";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column1
             // 
@@ -170,6 +184,7 @@ namespace CC01.WinForms
             this.Controls.Add(this.lblRecherch);
             this.Name = "FormListEcole";
             this.Text = "FormListEcole";
+            this.Load += new System.EventHandler(this.FormListEcole_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,9 +199,10 @@ namespace CC01.WinForms
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.TextBox txtRecherch;
         private System.Windows.Forms.Label lblRecherch;
+        private System.Windows.Forms.DataGridViewImageColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
