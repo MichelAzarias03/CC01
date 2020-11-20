@@ -18,7 +18,6 @@ namespace CC01.WinForms
         {
             InitializeComponent();
         }
-
         public FormPreview(string reportPath, object items) : this()
         {
             this.reportPath = reportPath;
@@ -27,24 +26,21 @@ namespace CC01.WinForms
 
         private void FormPreview_Load(object sender, EventArgs e)
         {
+
             this.reportViewer1.LocalReport.ReportPath = "ReportListEtudiant.rdlc";
             this.reportViewer1.LocalReport.DataSources.Add
             (
                 new Microsoft.Reporting.WinForms.ReportDataSource
                 (
-                    "DataSet1",
+                    "DataSet2",
                     items
                 )
             );
             this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.reportViewer1.ZoomPercent = 100;
+
             this.reportViewer1.RefreshReport();
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

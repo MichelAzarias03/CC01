@@ -165,10 +165,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportListEtudiant.rdlc" />
+    <EmbeddedResource Include="ReportListEtudiant.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CC01.BO.Ecole.datasource" />
     <None Include="Properties\DataSources\CC01.BO.Etudiant.datasource" />
+    <None Include="Properties\DataSources\ListEtudiantPrint.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

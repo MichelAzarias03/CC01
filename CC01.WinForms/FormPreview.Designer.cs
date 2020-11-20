@@ -29,7 +29,10 @@ namespace CC01.WinForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ProductListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -39,8 +42,12 @@ namespace CC01.WinForms
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 1;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // ProductListBindingSource
+            // 
+            this.ProductListBindingSource.AllowNew = false;
+            this.ProductListBindingSource.DataSource = typeof(CC01.WinForms.ListEtudiantPrint);
             // 
             // FormPreview
             // 
@@ -51,6 +58,7 @@ namespace CC01.WinForms
             this.Name = "FormPreview";
             this.Text = "FormPreview";
             this.Load += new System.EventHandler(this.FormPreview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -58,5 +66,6 @@ namespace CC01.WinForms
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource ProductListBindingSource;
     }
 }
