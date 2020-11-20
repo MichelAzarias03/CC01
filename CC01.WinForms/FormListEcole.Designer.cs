@@ -35,11 +35,11 @@ namespace CC01.WinForms
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnCreer = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblRecherch = new System.Windows.Forms.Label();
             this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblRecherch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@ namespace CC01.WinForms
             this.btnAnnuler.BackColor = System.Drawing.Color.Crimson;
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.Location = new System.Drawing.Point(541, 407);
+            this.btnAnnuler.Location = new System.Drawing.Point(676, 407);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(112, 33);
             this.btnAnnuler.TabIndex = 23;
@@ -62,7 +62,7 @@ namespace CC01.WinForms
             this.btnImprimer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimer.Location = new System.Drawing.Point(541, 274);
+            this.btnImprimer.Location = new System.Drawing.Point(676, 275);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.Size = new System.Drawing.Size(112, 33);
             this.btnImprimer.TabIndex = 22;
@@ -76,7 +76,7 @@ namespace CC01.WinForms
             this.btnSupprimer.BackColor = System.Drawing.Color.Fuchsia;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(541, 218);
+            this.btnSupprimer.Location = new System.Drawing.Point(676, 219);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(112, 33);
             this.btnSupprimer.TabIndex = 21;
@@ -90,7 +90,7 @@ namespace CC01.WinForms
             this.btnModifier.BackColor = System.Drawing.Color.Aquamarine;
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(541, 155);
+            this.btnModifier.Location = new System.Drawing.Point(676, 156);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(112, 33);
             this.btnModifier.TabIndex = 20;
@@ -104,7 +104,7 @@ namespace CC01.WinForms
             this.btnCreer.BackColor = System.Drawing.Color.LimeGreen;
             this.btnCreer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreer.Location = new System.Drawing.Point(541, 90);
+            this.btnCreer.Location = new System.Drawing.Point(676, 91);
             this.btnCreer.Name = "btnCreer";
             this.btnCreer.Size = new System.Drawing.Size(112, 33);
             this.btnCreer.TabIndex = 19;
@@ -128,33 +128,17 @@ namespace CC01.WinForms
             this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(23, 88);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(399, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(620, 352);
             this.dataGridView1.TabIndex = 18;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Photo";
-            this.Column2.HeaderText = "LOGO";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Identifiant";
-            this.Column3.Name = "Column3";
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSearch.Location = new System.Drawing.Point(23, 63);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(399, 20);
+            this.txtSearch.Size = new System.Drawing.Size(620, 20);
             this.txtSearch.TabIndex = 17;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
             // 
@@ -168,6 +152,27 @@ namespace CC01.WinForms
             this.lblRecherch.Size = new System.Drawing.Size(88, 16);
             this.lblRecherch.TabIndex = 16;
             this.lblRecherch.Text = "Rechercher";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Logo";
+            this.Column2.HeaderText = "LOGO";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nom";
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Identifiant";
+            this.Column3.HeaderText = "Identifiant";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // FormListEcole
             // 

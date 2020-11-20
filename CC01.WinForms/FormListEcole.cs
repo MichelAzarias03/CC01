@@ -73,7 +73,7 @@ namespace CC01.WinForms
                 if (
                     MessageBox.Show
                     (
-                        "Do you really want to delete this product(s)?",
+                        "Do you really want to delete this school(s)?",
                         "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question
                     ) == DialogResult.Yes
                 )

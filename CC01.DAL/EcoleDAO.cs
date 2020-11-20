@@ -11,7 +11,7 @@ namespace CC01.DAL
 {
     public class EcoleDAO
     {
-        private Ecole ecoles=new Ecole();
+        private Ecole ecoles = new Ecole();
         private const string FILE_NAME = @"ecole.json";
         private readonly string dbFolder;
         private FileInfo file;

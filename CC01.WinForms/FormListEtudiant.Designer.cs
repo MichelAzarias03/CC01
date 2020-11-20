@@ -29,6 +29,7 @@ namespace CC01.WinForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnImprimer = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@ namespace CC01.WinForms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblRecherch = new System.Windows.Forms.Label();
+            this.ecoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +48,7 @@ namespace CC01.WinForms
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecoleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAnnuler
@@ -144,6 +147,7 @@ namespace CC01.WinForms
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(815, 406);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtSearch
             // 
@@ -169,16 +173,24 @@ namespace CC01.WinForms
             this.lblRecherch.TabIndex = 8;
             this.lblRecherch.Text = "Rechercher";
             // 
+            // ecoleBindingSource
+            // 
+            this.ecoleBindingSource.DataSource = typeof(CC01.BO.Ecole);
+            // 
             // Column8
             // 
             this.Column8.DataPropertyName = "CarteEtudiant";
+            this.Column8.FillWeight = 50.76144F;
             this.Column8.HeaderText = "PHOTO";
+            this.Column8.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Nom";
+            this.Column1.FillWeight = 74.04174F;
             this.Column1.HeaderText = "Nom";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -186,6 +198,7 @@ namespace CC01.WinForms
             // Column2
             // 
             this.Column2.DataPropertyName = "Prenom";
+            this.Column2.FillWeight = 74.04174F;
             this.Column2.HeaderText = "Prenom";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -193,6 +206,7 @@ namespace CC01.WinForms
             // Column3
             // 
             this.Column3.DataPropertyName = "Matricule";
+            this.Column3.FillWeight = 74.04174F;
             this.Column3.HeaderText = "Matricule";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -200,6 +214,7 @@ namespace CC01.WinForms
             // Column4
             // 
             this.Column4.DataPropertyName = "Contact";
+            this.Column4.FillWeight = 74.04174F;
             this.Column4.HeaderText = "Contact";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -207,6 +222,7 @@ namespace CC01.WinForms
             // Column5
             // 
             this.Column5.DataPropertyName = "Email";
+            this.Column5.FillWeight = 74.04174F;
             this.Column5.HeaderText = "Email";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -214,6 +230,7 @@ namespace CC01.WinForms
             // Column6
             // 
             this.Column6.DataPropertyName = "DateNaissance";
+            this.Column6.FillWeight = 74.04174F;
             this.Column6.HeaderText = "DateNais";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -221,6 +238,7 @@ namespace CC01.WinForms
             // Column7
             // 
             this.Column7.DataPropertyName = "LieuNaissance";
+            this.Column7.FillWeight = 74.04174F;
             this.Column7.HeaderText = "Lieu";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -242,6 +260,7 @@ namespace CC01.WinForms
             this.Text = "FormListEtudiant";
             this.Load += new System.EventHandler(this.FormListEtudiant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecoleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,6 +276,7 @@ namespace CC01.WinForms
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblRecherch;
+        private System.Windows.Forms.BindingSource ecoleBindingSource;
         private System.Windows.Forms.DataGridViewImageColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

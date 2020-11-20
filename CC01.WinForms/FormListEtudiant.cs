@@ -132,5 +132,10 @@ namespace CC01.WinForms
             Form f = new FormPreview("ProductListRpt.rdlc", items);
             f.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
