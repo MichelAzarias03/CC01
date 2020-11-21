@@ -32,7 +32,7 @@ namespace CC01.WinForms
             (
                 new Microsoft.Reporting.WinForms.ReportDataSource
                 (
-                    "DataSet2",
+                    "DataSet1",
                     items
                 )
             );
