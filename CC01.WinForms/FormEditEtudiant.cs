@@ -182,5 +182,13 @@ namespace CC01.WinForms
         {
             pictureBox1.ImageLocation = null;
         }
+
+        private void btnCodeBar_Click(object sender, EventArgs e)
+        {
+            Zen.Barcode.CodeQrBarcodeDraw codeQr = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+            pictureBox2.Image = codeQr.Draw(txtMatricule.Text, 25);
+            //Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            //pictureBox2.Image = barcode.Draw(txtMatricule.Text, 50);
+        }
     }
 }

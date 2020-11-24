@@ -48,7 +48,10 @@ namespace CC01.WinForms
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCodeBar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -56,7 +59,7 @@ namespace CC01.WinForms
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(616, 28);
+            this.linkLabel1.Location = new System.Drawing.Point(706, 29);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(17, 16);
             this.linkLabel1.TabIndex = 37;
@@ -68,7 +71,7 @@ namespace CC01.WinForms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(349, 24);
+            this.label1.Location = new System.Drawing.Point(566, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 36;
@@ -83,7 +86,7 @@ namespace CC01.WinForms
             this.btnAnnuler.ForeColor = System.Drawing.Color.White;
             this.btnAnnuler.Location = new System.Drawing.Point(352, 334);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(281, 34);
+            this.btnAnnuler.Size = new System.Drawing.Size(154, 34);
             this.btnAnnuler.TabIndex = 35;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
@@ -188,9 +191,9 @@ namespace CC01.WinForms
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(352, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(569, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(281, 177);
+            this.pictureBox1.Size = new System.Drawing.Size(154, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -202,9 +205,9 @@ namespace CC01.WinForms
             this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnregistrer.ForeColor = System.Drawing.Color.White;
-            this.btnEnregistrer.Location = new System.Drawing.Point(352, 249);
+            this.btnEnregistrer.Location = new System.Drawing.Point(569, 332);
             this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(281, 36);
+            this.btnEnregistrer.Size = new System.Drawing.Size(154, 36);
             this.btnEnregistrer.TabIndex = 21;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = false;
@@ -234,11 +237,34 @@ namespace CC01.WinForms
             this.dateTimePicker1.Size = new System.Drawing.Size(261, 20);
             this.dateTimePicker1.TabIndex = 38;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox2.Location = new System.Drawing.Point(372, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(134, 111);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnCodeBar
+            // 
+            this.btnCodeBar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnCodeBar.Location = new System.Drawing.Point(395, 169);
+            this.btnCodeBar.Name = "btnCodeBar";
+            this.btnCodeBar.Size = new System.Drawing.Size(75, 23);
+            this.btnCodeBar.TabIndex = 40;
+            this.btnCodeBar.Text = "Code Bar";
+            this.btnCodeBar.UseVisualStyleBackColor = false;
+            this.btnCodeBar.Click += new System.EventHandler(this.btnCodeBar_Click);
+            // 
             // FormEditEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 450);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(748, 450);
+            this.Controls.Add(this.btnCodeBar);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
@@ -259,9 +285,10 @@ namespace CC01.WinForms
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.lblNom);
             this.Name = "FormEditEtudiant";
-            this.Text = "Form1";
+            this.Text = "Carte Etudiant";
             this.Load += new System.EventHandler(this.FormEditEtudiant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,6 +315,8 @@ namespace CC01.WinForms
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnCodeBar;
     }
 }
 

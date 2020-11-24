@@ -36,9 +36,6 @@ namespace CC01.WinForms
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnCreer = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblRecherch = new System.Windows.Forms.Label();
-            this.ecoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,9 @@ namespace CC01.WinForms
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblRecherch = new System.Windows.Forms.Label();
+            this.ecoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ecoleBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +130,7 @@ namespace CC01.WinForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Beige;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
@@ -148,34 +148,6 @@ namespace CC01.WinForms
             this.dataGridView1.Size = new System.Drawing.Size(815, 406);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(12, 41);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(814, 20);
-            this.txtSearch.TabIndex = 9;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
-            // 
-            // lblRecherch
-            // 
-            this.lblRecherch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRecherch.AutoSize = true;
-            this.lblRecherch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecherch.Location = new System.Drawing.Point(17, 14);
-            this.lblRecherch.Name = "lblRecherch";
-            this.lblRecherch.Size = new System.Drawing.Size(88, 16);
-            this.lblRecherch.TabIndex = 8;
-            this.lblRecherch.Text = "Rechercher";
-            // 
-            // ecoleBindingSource
-            // 
-            this.ecoleBindingSource.DataSource = typeof(CC01.BO.Ecole);
             // 
             // Column8
             // 
@@ -243,10 +215,39 @@ namespace CC01.WinForms
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(12, 41);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(814, 20);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtRecherch_TextChanged);
+            // 
+            // lblRecherch
+            // 
+            this.lblRecherch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRecherch.AutoSize = true;
+            this.lblRecherch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecherch.Location = new System.Drawing.Point(17, 14);
+            this.lblRecherch.Name = "lblRecherch";
+            this.lblRecherch.Size = new System.Drawing.Size(88, 16);
+            this.lblRecherch.TabIndex = 8;
+            this.lblRecherch.Text = "Rechercher";
+            // 
+            // ecoleBindingSource
+            // 
+            this.ecoleBindingSource.DataSource = typeof(CC01.BO.Ecole);
+            // 
             // FormListEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(968, 504);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnImprimer);
